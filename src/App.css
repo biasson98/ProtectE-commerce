@@ -6,6 +6,7 @@ header .main-header {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  background: blue;
 }
 
 ul.navbar{
