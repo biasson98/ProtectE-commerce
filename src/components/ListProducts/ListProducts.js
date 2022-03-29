@@ -25,7 +25,31 @@ const ListProducts = ({children}) => {
         price: 120,
         image: '76298940-squier1.jpg',
         stock: 6, 
-    }
+    },
+    {
+        title : 'Gibson Les Paul',
+        id: 4,
+        color: 'GoldTop',
+        price: 500,
+        image: 'lespaul.jpg',
+        stock: 2, 
+    },
+    {
+        title : 'Ephiphone Les Paul',
+        id: 5,
+        color: 'Cherry Sunburst',
+        price: 500,
+        image: 'I07023088_1-600x600.jpg',
+        stock: 5, 
+    },
+    {
+        title : 'Squier Telecaster',
+        id: 6,
+        color: 'Sunburst',
+        price: 130,
+        image: 'preview_1.jpg',
+        stock: 2, 
+    },
 ]
 
     const [products, setProducts] = useState([])
