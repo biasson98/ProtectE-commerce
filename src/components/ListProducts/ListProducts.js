@@ -4,7 +4,7 @@ import mockProductos from '../../Utils/productsMock'
 import { useParams } from 'react-router-dom'
 
 const ListProducts = ({children}) => {
-    const { category } = useParams()
+    const { category } = useParams();
 
     const [products, setProducts] = useState([])
 

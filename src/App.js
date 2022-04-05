@@ -1,40 +1,36 @@
-import './App.css';
-import React, {useState, useEffect} from 'react'
-//mport { BrowserRouter, Routes, Route } from 'react-router-dom'
-//components
-import Card from './components/Card/Card'
+//Componentes
 import NavBar from './components/NavBar/NavBar';
-import ListProducts from './components/ListProducts/ListProducts';
-import ModalCustom from './components/Modal/Modal'
-import Container from '@mui/material/Container';
-import AutoPlaySwipeableViews from './components/Carousel/Carousel';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
+import SwipeableTextMobileStepper from '../src/components/Carousel/Carousel';
 
+//Pages
+import Home from './pages/HomePage';
+import NotFound from './pages/NotFoundPage';
+import ItemDetailPage from './pages/ItemDetailPage';
+import CategoryPage from './pages/CategoryPage';
+//Estilos
 import './App.css';
+
+
+
 function App() {
-  const [open, setOpen] = useState(false);
-
-  const handleClose = (value) => {
-      setOpen(false);
-  };
-  
-  const handleOpen = () => {
-    setOpen(true)
-  }
-
-
-
-
   return (
-    
-    <div className="App">
-     <NavBar />
-     <AutoPlaySwipeableViews/>
-  
-      <Container className='container-general'> 
-        <ListProducts />
-      </Container>
-    </div>
+      <div className="App">
+      <BrowserRouter>
+        <NavBar/>
+        <SwipeableTextMobileStepper/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='*' element={<NotFound/>}/>
+          <Route path='/category' element={<CategoryPage/>}/>
+          <Route path='/category/:id' element={<ItemListContainer/>}/>
+          <Route path='/item/:id' element={<ItemDetailPage/>}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
+    </div> 
   );
 }
 

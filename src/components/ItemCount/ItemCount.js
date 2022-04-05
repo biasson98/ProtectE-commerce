@@ -1,19 +1,33 @@
-import React,{useState} from 'react'
-const ItemCount = ({stock}) => {
-    const [count, setCount] = useState(1)
+//Componentes
+import React,{useState} from "react";
+import Button from '@mui/material/Button';
 
-    const onAdd = () => {
-        if(count < stock) {
+const ItemCount = ({stock, initial}) => {
+    const [count, setCount] = useState(initial);
+    const countPlus = () =>{
+        if(count < stock){
             setCount(count + 1)
         }
     }
-    return(
-        <>
-            <button>-</button>
+    const countMinus = () =>{
+        if(count > 0){
+            setCount(count - 1)
+        }
+    }
+    const onAdd = () => {
+        console.log(`Agregaste ${count} productos al carrito.`);
+    }
+    return (
+        <div>
+            <div className="btnCounter">
+            <Button onClick={countMinus}>-</Button>
             <p>{count}</p>
-            <button onClick={onAdd}>+</button>
-        </>
+            <Button onClick={countPlus}>+</Button>
+            </div>
+            <Button onClick={onAdd}>Agregar al Carrito</Button>
+        </div>
+        
     )
 }
 
-export default ItemCount
+export default ItemCount;

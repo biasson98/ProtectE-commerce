@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ItemDetail from '../ItemDetail/ItemDetail'
-import mockProducto from '../../Utils/productMock'
+import mockProducto from '../utils/mockProducts'
 
 const ItemDetailContainer = () => {
     const [dataProduct, setDataProduct] = useState({})
