@@ -10,6 +10,7 @@ import Home from './pages/HomePage';
 import NotFound from './pages/NotFoundPage';
 import ItemDetailPage from './pages/ItemDetailPage';
 import CategoryPage from './pages/CategoryPage';
+import ContactPage from './pages/Contact'
 //Estilos
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/category' element={<CategoryPage/>}/>
           <Route path='/category/:id' element={<ItemListContainer/>}/>
           <Route path='/item/:id' element={<ItemDetailPage/>}/>
+          <Route path='/contacto' element={<ContactPage/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
